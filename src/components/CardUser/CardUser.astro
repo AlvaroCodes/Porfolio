@@ -1,0 +1,47 @@
+---
+import { Image } from "astro:assets";
+import myPhoto from "../../assets/myPhoto.webp";
+---
+
+<section>
+  <div class="cardUser-info">
+    <h1>Hola, Soy AlvaroCodes</h1>
+    <p>Full stack developer con +4 años de experiencia en el desarrollo web.</p>
+  </div>
+
+  <Image src={myPhoto} alt="Descripción de la imagen" />
+
+  <style>
+    section * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      width: 100%;
+      padding: 10px 20px;
+      background: rgba(0, 0, 0, 0.043);
+      border-radius: 10px;
+    }
+
+    img {
+      width: fit-content;
+      max-height: 100px;
+
+      border-radius: 50%;
+      border: 2px solid rgb(190, 190, 190);
+    }
+
+    .cardUser-info h1 {
+      font-family: "M PLUS Rounded 1c", serif;
+      font-weight: bold;
+      font-style: normal;
+      font-size: 1.5rem;
+    }
+  </style>
+</section>

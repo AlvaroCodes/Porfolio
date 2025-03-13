@@ -1,0 +1,55 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths(){
+    const COUNTENT_ROUTER = [
+    {
+        params: { id: "API-CNIG" },
+        props: {
+            title: "Librería API-CNIG",
+            description: [
+                ""
+            ],
+            image: "/images/apicnig.png",
+            responsabilities: ["Desarrollo y mantenimiento de las librerías API-CNIG", "Desarrollo del Frontend"],
+        },
+    }
+]
+
+    return COUNTENT_ROUTER;
+}
+
+const { title, image, description, responsabilities } = Astro.props;
+---
+
+<Layout>
+<main>
+    <img src={image} alt={title}>
+    <section>
+        <h1>{title}</h1>
+        <p>{description}</p>
+        {
+            responsabilities && (
+                <ul>
+                    {
+                        responsabilities.map((responsability) => (
+                            <li>{responsability}</li>
+                        ))
+                    }
+                </ul>
+            )
+        }
+    </section>
+</main>
+</Layout>
+
+<style>
+    ul {
+        list-style: none;
+    }
+
+    li::before {
+    content: "\2713"; /* Unicode para ✓ */
+    margin-right: 5px;
+}
+</style>

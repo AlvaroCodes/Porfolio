@@ -1,0 +1,145 @@
+---
+import CardUser from "../components/CardUser/CardUser.astro";
+import CardAbout from "../components/CardAbout/CardAbout.astro";
+import Layout from "../layouts/Layout.astro";
+import NavBar from "../components/NavBar/NavBar.astro";
+import { Image } from "astro:assets";
+
+import IBERPIX from "../assets/iberpix.webp";
+import NOMENCLATOR from "../assets/nomenclator.webp";
+import TERREMOTOS from "../assets/terremotos.webp";
+import COMPARADOR from "../assets/comparador.webp";
+import API_CNIG from "../assets/apicnig.png";
+import API_IDEE from "../assets/apiidee.png";
+
+import BASICA from "../assets/basica.webp";
+import EGORF from "../assets/egorf.webp";
+---
+
+<Layout>
+  <main>
+    <header>
+      <CardUser />
+      <NavBar />
+    </header>
+
+    <CardAbout title="Sobre mi">
+      <p>
+        Con más de 4 años de experiencia como Full Stack Developer, estoy
+        trabajando en Guadaltel S.A, desarrollando la librería API-CNIG y
+        API-IDEE, sitios webs cartográficos, testing y accesibilidad.
+      </p>
+      <p>
+        Anteriormente, como autónomo, he gestionado proyectos con tecnologías
+        como PHP, JavaScript y bases de datos relacionales (MySQL).
+      </p>
+    </CardAbout>
+
+    <CardAbout title="Experiencia">
+      <div>
+        <strong>Full Stack Developer en Guadaltel, S.A</strong>
+        <p class="date">
+          Marzo 2022 - Actualidad [ Sevilla · España] [ SIG, Instituto
+          Geográfico Nacional ]
+        </p>
+        <p>
+          Desarrollo y mantenimiento sitios webs relacionados con el instituto
+          geográfico nacional y desarrollo de la librería API-CNIG y API-IDEE.
+        </p>
+
+        <CardAbout title="Proyectos" typeTitle="h2">
+          <div class="projects">
+            <Image src={API_CNIG} alt="Iberpix" />
+            <Image src={API_IDEE} alt="Nomenclator" />
+          </div>
+
+          <div class="projects">
+            <Image src={IBERPIX} alt="Iberpix" />
+            <Image src={NOMENCLATOR} alt="Nomenclator" />
+          </div>
+
+          <div class="projects">
+            <Image src={TERREMOTOS} alt="Terremotos" />
+            <Image src={COMPARADOR} alt="Comparador" />
+          </div>
+        </CardAbout>
+      </div>
+
+      <div>
+        <strong>Full Stack Developer Autónomo</strong>
+        <p class="date">
+          Octubre 2020 - Febrero 2022 [ Sevilla · España] [ Plataforma de
+          Oposiciones ]
+        </p>
+        <p>
+          Desarrollo de sitios web con CMS, tecnologías web y bases de datos
+          relacionales para un web de oposiciones a Policía Nacional.
+        </p>
+
+        <p class="date">
+          Mayo 2024 - Junio 2024 [ Sevilla · España] [ European Grand Old Rugby
+          Festival ]
+        </p>
+        <p>
+          Desarrollo de la web oficial del evento deportivo European Grand Old
+          Rugby Festival 2024.
+        </p>
+      </div>
+
+      <div>
+        <strong
+          >Ciclo Formativo de Grado Superior, Desarrollo de aplicaciones web.</strong
+        >
+        <p class="date">Septiembre 2020 - Marzo 2022 [ Sevilla · España]</p>
+      </div>
+    </CardAbout>
+
+    <CardAbout title="Proyectos como freelance">
+      <div class="projects">
+        <Image src={BASICA} alt="Básica" />
+        <Image src={EGORF} alt="Egorf" />
+      </div>
+    </CardAbout>
+  </main>
+</Layout>
+
+<style>
+  main {
+    width: 650px;
+    height: 100%;
+  }
+
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    gap: 20px;
+  }
+
+  .projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+
+    max-width: 100%;
+
+    margin-bottom: 20px;
+  }
+
+  .projects img {
+    width: 300px;
+    height: 160px;
+    border-radius: 10px;
+  }
+
+  .date {
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    color: rgb(63, 63, 63);
+  }
+</style>

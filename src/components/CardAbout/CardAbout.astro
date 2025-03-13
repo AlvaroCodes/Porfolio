@@ -1,0 +1,45 @@
+---
+const { title = '', typeTitle = 'h1' } = Astro.props;
+---
+
+
+<section>
+    {
+      typeTitle === 'h1' && <h1>{title}</h1>
+    }
+
+    {
+      typeTitle === 'h2' && <h2>{title}</h2>
+    }
+
+    {
+      typeTitle === 'h3' && <h3>{title}</h3>
+    }
+
+    <slot />
+</section>
+
+
+<style>
+    h1, h2, h3 {
+      font-family: "M PLUS Rounded 1c", serif;
+      font-weight: bold;
+      font-style: normal;
+    
+
+      display: inline-block;
+      border-bottom: 2px dotted #3f3f3fa3; 
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+    }
+</style>
