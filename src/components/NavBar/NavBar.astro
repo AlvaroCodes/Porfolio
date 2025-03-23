@@ -6,7 +6,8 @@
   <a href="#Sobre mi">Sobre mí</a>
   <a href="#Experiencia">Experiencia</a>
   <a class="project-company" href="#projects-guadaltel">Proyectos en Empresas</a>
-  <a href="#projects-freelan">Proyectos como freelance</a>
+  <a class="freelance" href="#projects-freelan">Proyectos como freelance</a>
+  <a class="freelance-movil" href="#projects-freelan">Freelance</a>
 </nav>
 
 <style>
@@ -39,14 +40,23 @@
         color: black;
     }
 
+    .freelance-movil {
+      display: none;
+    }
+
     @media (width <= 700px) {
       a {
         font-size: 0.9rem;
         text-align: center;
       }
 
-      .project-company {
+      .project-company,
+      .freelance {
         display: none;
+      }
+
+      .freelance-movil {
+        display: block;
       }
      }
 </style>
