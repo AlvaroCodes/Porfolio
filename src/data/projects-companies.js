@@ -21,9 +21,9 @@ import PLANOS_ANTIGUOS from "../assets/planosAntiguos.webp";
 
 export const CONTENT_PROJECT_1 = [
   {
-    title: "API-CNIG",
-    url: '/projects/api-cnig',
-    image: API_CNIG,
+    title: "Portal de datos abiertos del Ayuntamiento de Madrid",
+    url: '/projects/ckan',
+    image: CKAN,
   },
   {
     title: "API-IDEE",
@@ -31,14 +31,9 @@ export const CONTENT_PROJECT_1 = [
     image: API_IDEE,
   },
   {
-    title: "Comparador de Mapas",
-    url: '/projects/comparadormapas',
-    image: COMPARADOR,
-  },
-  {
-    title: "Portal de datos abiertos del Ayuntamiento de Madrid",
-    url: '/projects/ckan',
-    image: CKAN,
+    title: "API-CNIG",
+    url: '/projects/api-cnig',
+    image: API_CNIG,
   },
   {
     title: "Nomenclator",
@@ -51,14 +46,19 @@ export const CONTENT_PROJECT_1 = [
     image: ESTEREO,
   },
   {
-    title: "Madrid Texeira",
-    url: '/projects/madrid-texeira',
-    image: MADRID_TEXEIRA,
+    title: "Comparador de Mapas",
+    url: '/projects/comparadormapas',
+    image: COMPARADOR,
   },
   {
     title: "Redes Geodésicas",
     url: '/projects/redes-geodesicas',
     image: REDES_GEODESICAS,
+  },
+  {
+    title: "Madrid Texeira",
+    url: '/projects/madrid-texeira',
+    image: MADRID_TEXEIRA,
   }
 ];
 

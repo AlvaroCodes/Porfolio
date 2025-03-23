@@ -8,14 +8,14 @@ import APRENDE_OL from "../assets/aprende-ol.webp";
 
 export const CONTENT_PROJECT_FREELANCE = [ 
     {
-        title: "Básica",
-        url: '/projects/basica',
-        image: BASICA,
-    },
-    {
         title: "Egorf",
         url: '/projects/egorf',
         image: EGORF,
+    },
+    {
+        title: "Básica",
+        url: '/projects/basica',
+        image: BASICA,
     }
 ];
 
