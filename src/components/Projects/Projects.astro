@@ -1,0 +1,37 @@
+---
+import { Image } from "astro:assets";
+
+const  { contentProjects } = Astro.props;
+---
+
+<div class="projects">
+{
+    contentProjects.map((content) => (
+      <a href={content.url} title={content.title}>
+          <Image 
+          transition:name={content.title}
+          src={content.image} alt={content.title} />
+      </a>
+    ))
+}
+</div>
+
+<style>
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  @media (width <= 700px) { 
+    .projects {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .projects img {
+    width: 300px;
+    height: 160px;
+    border-radius: 10px;
+  }
+</style>

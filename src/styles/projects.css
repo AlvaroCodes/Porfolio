@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+h1, h2, h3 {
+    font-family: "M PLUS Rounded 1c", serif;
+    font-weight: bold;
+    font-style: normal;
+  
+
+    display: inline-block;
+    border-bottom: 2px dotted #3f3f3fa3; 
+
+    padding: 0;
+  }
+
+strong {
+  font-family: "M PLUS Rounded 1c", serif;
+  font-weight: bold;
+  font-style: normal;
+  background-color: #3f3f3f1c;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+p:has(> strong) {
+  margin-top: 20px;
+}
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  h1 {
+    margin-left: 10px;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    margin-top: 10px;
+  }
+
+.projects-content, .projects-responsabilities {
+    margin-top: 30px;
+}
+
+.projects-responsabilities  {
+  width: 100%;
+}
+
+.projects-responsabilities p {
+  margin: 5px 0;
+}
+
+
+.projects-content-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.projects-description p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.projects-description{
+   max-width: 40%;
+}
+
+
+ul {
+  margin-left: 30px;
+}
+
+li {
+  margin: 10px 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: underline;
+}

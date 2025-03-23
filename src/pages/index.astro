@@ -3,17 +3,12 @@ import CardUser from "../components/CardUser/CardUser.astro";
 import CardAbout from "../components/CardAbout/CardAbout.astro";
 import Layout from "../layouts/Layout.astro";
 import NavBar from "../components/NavBar/NavBar.astro";
-import { Image } from "astro:assets";
 
-import IBERPIX from "../assets/iberpix.webp";
-import NOMENCLATOR from "../assets/nomenclator.webp";
-import TERREMOTOS from "../assets/terremotos.webp";
-import COMPARADOR from "../assets/comparador.webp";
-import API_CNIG from "../assets/apicnig.png";
-import API_IDEE from "../assets/apiidee.png";
+import MoreContent from "../components/MoreContent/MoreContent.astro";
+import Projects from "../components/Projects/Projects.astro";
 
-import BASICA from "../assets/basica.webp";
-import EGORF from "../assets/egorf.webp";
+import { CONTENT_PROJECT_1, CONTENT_PROJECT_2 } from "../data/projects-companies.js";
+import { CONTENT_PROJECT_FREELANCE, CONTENT_MY_PROJECTS } from "../data/projects-freelance.js";
 ---
 
 <Layout>
@@ -27,17 +22,17 @@ import EGORF from "../assets/egorf.webp";
       <p>
         Con más de 4 años de experiencia como Full Stack Developer, estoy
         trabajando en Guadaltel S.A, desarrollando la librería API-CNIG y
-        API-IDEE, sitios webs cartográficos, testing y accesibilidad.
+        API-IDEE, sitios webs cartográficos, aplicaciones webs, testing y accesibilidad.
       </p>
       <p>
-        Anteriormente, como autónomo, he gestionado proyectos con tecnologías
-        como PHP, JavaScript y bases de datos relacionales (MySQL).
+        Como autónomo, he gestionado proyectos con tecnologías
+        como React, NodeJS, PHP, JavaScript y bases de datos relacionales (MySQL).
       </p>
     </CardAbout>
 
     <CardAbout title="Experiencia">
       <div>
-        <strong>Full Stack Developer en Guadaltel, S.A</strong>
+        <strong id="projects-guadaltel" class="subTitle">Full Stack Developer en Guadaltel, S.A</strong>
         <p class="date">
           Marzo 2022 - Actualidad [ Sevilla · España] [ SIG, Instituto
           Geográfico Nacional ]
@@ -47,26 +42,25 @@ import EGORF from "../assets/egorf.webp";
           geográfico nacional y desarrollo de la librería API-CNIG y API-IDEE.
         </p>
 
+        <p class="date">
+          Febrero 2025 - Actualidad [ Sevilla · España] [ Ayuntamiento de Madrid ]
+        </p>
+        <p>
+          Desarrollo del portal de datos abiertos del Ayuntamiento de Madrid.
+        </p>
+
         <CardAbout title="Proyectos" typeTitle="h2">
-          <div class="projects">
-            <Image src={API_CNIG} alt="Iberpix" />
-            <Image src={API_IDEE} alt="Nomenclator" />
-          </div>
-
-          <div class="projects">
-            <Image src={IBERPIX} alt="Iberpix" />
-            <Image src={NOMENCLATOR} alt="Nomenclator" />
-          </div>
-
-          <div class="projects">
-            <Image src={TERREMOTOS} alt="Terremotos" />
-            <Image src={COMPARADOR} alt="Comparador" />
+          <div class="projects-work">
+            <Projects contentProjects={CONTENT_PROJECT_1} />
+            <MoreContent>
+              <Projects contentProjects={CONTENT_PROJECT_2} />
+            </MoreContent>
           </div>
         </CardAbout>
       </div>
 
       <div>
-        <strong>Full Stack Developer Autónomo</strong>
+        <strong id="projects-freelan" class="subTitle">Full Stack Developer Autónomo</strong>
         <p class="date">
           Octubre 2020 - Febrero 2022 [ Sevilla · España] [ Plataforma de
           Oposiciones ]
@@ -86,18 +80,32 @@ import EGORF from "../assets/egorf.webp";
         </p>
       </div>
 
-      <div>
-        <strong
-          >Ciclo Formativo de Grado Superior, Desarrollo de aplicaciones web.</strong
-        >
-        <p class="date">Septiembre 2020 - Marzo 2022 [ Sevilla · España]</p>
+    <CardAbout title="Proyectos como freelance" typeTitle="h2">
+      <div class="projects">
+         <Projects contentProjects={CONTENT_PROJECT_FREELANCE} />
       </div>
     </CardAbout>
 
-    <CardAbout title="Proyectos como freelance">
+    <CardAbout title="Proyectos Personales" typeTitle="h2">
       <div class="projects">
-        <Image src={BASICA} alt="Básica" />
-        <Image src={EGORF} alt="Egorf" />
+         <Projects contentProjects={CONTENT_MY_PROJECTS} />
+      </div>
+    </CardAbout>
+
+      <div>
+        <strong
+          class="subTitle"
+          >Ciclo Formativo de Grado Superior, Desarrollo de aplicaciones web.</strong
+        >
+        <p class="date">Septiembre 2020 - Marzo 2022 [CESUR · Sevilla · España]</p>
+
+        <p>✓ Frontend: HTML, CSS y JavaScript.</p>
+        <p>✓ Backend: Diseño de base de datos, SQL, MongoDB, Microsoft SQL Server, MySQL, PHP y Java.</p>
+        <p>✓ Herramientas: Eclipse y Visual Studio Code.</p>
+        <p>✓ Control de versiones: Git (GitHub and Bitbucket).</p>
+        <p>✓ Formato de datos: XML y JSON.</p>
+        <p>✓ Idiomas: Inglés.</p>
+        <p>✓ Diseño y experiencia de usuario: UI y UX.</p>
       </div>
     </CardAbout>
   </main>
@@ -105,8 +113,15 @@ import EGORF from "../assets/egorf.webp";
 
 <style>
   main {
+    margin-top: 20px;
     width: 650px;
     height: 100%;
+  }
+
+  @media (width <= 700px) { 
+    main {
+      width: 90%;
+    }
   }
 
   header {
@@ -116,6 +131,15 @@ import EGORF from "../assets/egorf.webp";
     flex-direction: column;
 
     gap: 20px;
+  }
+
+  .projects-work {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+    margin: 15px 0;
   }
 
   .projects {
@@ -141,5 +165,10 @@ import EGORF from "../assets/egorf.webp";
     font-weight: 600;
 
     color: rgb(63, 63, 63);
+  }
+
+  .subTitle {
+    font-size: 1.3rem;
+    font-weight: 600;
   }
 </style>

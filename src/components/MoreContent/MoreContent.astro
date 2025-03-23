@@ -1,0 +1,36 @@
+<details>
+    <summary>Ver más proyectos</summary>
+    <slot />
+</details>
+
+<style>
+    details {
+       width: fit-content;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       flex-direction: column;
+    }
+
+    details summary::webkit-details-marker {
+        display: none;
+    }
+
+    details summary {
+        list-style: none;
+        text-align: center;
+        font-size: 1.2rem;
+        font-family: "M PLUS Rounded 1c", serif;
+        font-weight: bold;
+        font-style: normal;
+
+        padding: 10px 20px;
+        background: rgba(0, 0, 0, 0.043);
+        max-width: 200px;
+        margin-bottom: 30px;
+    }
+
+    details summary:hover {
+        cursor: pointer;
+    }
+</style>
